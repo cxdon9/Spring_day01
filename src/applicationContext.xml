@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="p1" class="com.Person">
+        <property name="pid" value="1"/>
+        <property name="pname" value="小明"/>
+        <property name="address" ref="a1"/>
+    </bean>
+    <bean id="a1" class="com.baizhi.entity.Address">
+        <property name="address" value="硅谷广场14F"/>
+        <property name="aid" value="104"/>
+    </bean>
+
+    <bean id="a2" class="com.baizhi.dao.impl.UserDaoImpl"></bean>
+    <bean id="a3" class="com.UserServiceImpl">
+        <property name="userDao" ref="a2"/>
+    </bean>
+
+    <bean id="a5" class="com.User">
+        <property name="username" value="admin"/>
+    </bean>
+    <bean id="a6" class="com.User">
+        <property name="age" value="25"/>
+    </bean>
+
+</beans>
